@@ -1,9 +1,10 @@
 'use strict';
 
 let chai = require('chai'),
-    path = require('path');
+    path = require('path'),
+    sinon = require('sinon');
 
-chai.should();
+let expect = chai.expect;
 
 let NoteList = require(path.join(__dirname, '..', 'models/note-list-model'));
 
@@ -15,13 +16,15 @@ describe('NoteList', function() {
   })
 
   it('stores an array of note models', function() {
-    noteList.notes.should.be.empty
+    expect(noteList.notes).to.be.empty
   })
 
-  // describe('#getText', function() {
-  //
-  //   it('returns the text', function() {
-  //     note.getText().should.equal("My favourite language is JavaScript");
-  //   })
-  // })
+  describe('#addNote', function() {
+
+    it('adds a new note to the list', function() {
+      let mockNote = {};
+      noteList.addNote(mockNote);
+      expect(noteList.notes).to.include(mockNote)
+    })
+  })
 })

@@ -5,9 +5,9 @@ class NoteList {
     this.notes = [];
   }
 
-  // getText() {
-  //   return this.text;
-  // }
+  addNote(note) {
+    this.notes.push(note);
+  }
 }
 
 module.exports = NoteList
