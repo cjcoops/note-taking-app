@@ -3,7 +3,11 @@
 class Note {
 
   constructor(text){
-    this.text = text
+    this.text = text;
+  }
+
+  getText() {
+    return this.text;
   }
 
 }
