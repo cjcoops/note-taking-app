@@ -9,7 +9,7 @@
       this._app = app;
       this.displayList();
     }
-  
+
     displayList(){
       this._app.innerHTML = this._noteListView.returnHTML();
     }
