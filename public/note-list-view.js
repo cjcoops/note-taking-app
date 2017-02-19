@@ -10,10 +10,19 @@
       let html = "<ul>";
       let notes = this._noteListModel.getNotes();
       for (var i=0; i<notes.length; i++) {
-        html += "<li><div>" + notes[i].getText() + "</div></li>";
+        html += "<li><div>" + this.truncate(notes[i]) + "</div></li>";
       }
       html += "</ul>";
       return html;
+    }
+
+    truncate(note){
+      let noteText = note.getText()
+      if (noteText.length > 20) {
+        return noteText.substring(0,20) + "..."
+      } else {
+        return noteText;
+      }  
     }
   }
 

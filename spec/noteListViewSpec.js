@@ -35,12 +35,12 @@ describe('NoteListView', function() {
 
     it("returns HTML when list has one note", function() {
       noteListMock.getNotes.and.returnValue([noteMock])
-      expect(noteListView.returnHTML()).toEqual("<ul><li><div>Favourite food: pesto</div></li></ul>")
+      expect(noteListView.returnHTML()).toEqual("<ul><li><div>Favourite food: pest...</div></li></ul>")
     })
 
     it("returns HTML when list has two notes", function() {
       noteListMock.getNotes.and.returnValue([noteMock, noteMock2])
-      expect(noteListView.returnHTML()).toEqual("<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>")
+      expect(noteListView.returnHTML()).toEqual("<ul><li><div>Favourite food: pest...</div></li><li><div>Favourite drink: sel...</div></li></ul>")
     })
   })
 })
