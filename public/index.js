@@ -7,7 +7,8 @@
     let noteList = new NoteListModel();
     noteList.createNote("Favourite drink: seltzer")
 
-    console.log(noteList)
-    new NoteController(app, noteList);
+    let noteListView = new NoteListView(noteList);
+
+    new NoteController(app, noteListView, noteList);
   });
 })();
