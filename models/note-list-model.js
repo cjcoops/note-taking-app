@@ -10,4 +10,4 @@ class NoteList {
   }
 }
 
-module.exports = NoteList
+module.exports = NoteList;
