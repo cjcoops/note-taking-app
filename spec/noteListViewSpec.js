@@ -3,12 +3,21 @@
 describe('NoteListView', function() {
   let NoteListView = require('../views/note-list-view');
   let noteListView,
-      noteListMock;
-  //
-  // beforeEach(function() {
-  //   noteListMock = {};
-  //   noteListView = new NoteListView(noteListMock)
-  // })
+      noteListMock,
+      noteMock,
+      noteMock2;
+
+  beforeEach(function() {
+    noteMock2 = jasmine.createSpyObj("note", ["getText"]);
+    noteMock2.getText.and.returnValue("Favourite drink: seltzer");
+
+    noteMock = jasmine.createSpyObj("note", ["getText"]);
+    noteMock.getText.and.returnValue("Favourite food: pesto");
+
+    noteListMock = jasmine.createSpyObj("noteList",["getNotes"])
+    
+    noteListView = new NoteListView(noteListMock)
+  })
 
   describe("::new", function() {
     it("should create new noteListView instance", function() {
@@ -21,9 +30,18 @@ describe('NoteListView', function() {
   describe("#returnHTML", function() {
 
     it("returns HTML when list is empty", function() {
-      noteListMock = {notes: []};
-      noteListView = new NoteListView(noteListMock)
+      noteListMock.getNotes.and.returnValue([])
       expect(noteListView.returnHTML()).toEqual("<ul></ul>")
+    })
+
+    it("returns HTML when list has one note", function() {
+      noteListMock.getNotes.and.returnValue([noteMock])
+      expect(noteListView.returnHTML()).toEqual("<ul><li><div>Favourite food: pesto</div></li></ul>")
+    })
+
+    it("returns HTML when list has two notes", function() {
+      noteListMock.getNotes.and.returnValue([noteMock, noteMock2])
+      expect(noteListView.returnHTML()).toEqual("<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>")
     })
   })
 })
