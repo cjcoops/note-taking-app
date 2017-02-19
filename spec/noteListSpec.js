@@ -3,6 +3,7 @@
 describe('NoteList', function() {
   let NoteList = require('../models/note-list-model')
   let noteList
+  let Note = require('../models/note-model')
 
   beforeEach(function() {
     noteList = new NoteList;
@@ -12,12 +13,12 @@ describe('NoteList', function() {
     expect(noteList.notes).toEqual([])
   })
 
-  describe('#addNote', function() {
+  describe('#createNote', function() {
 
-    it('adds a new note to the list', function() {
-      let mockNote = {};
-      noteList.addNote(mockNote);
-      expect(noteList.notes).toContain(mockNote)
+    it('creates a new note and adds to the list', function() {
+      noteList.createNote("My favourite language is JavaScript");
+      expect(noteList.notes[0] instanceof Note).toBeTruthy();
     })
+
   })
 })

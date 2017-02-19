@@ -1,11 +1,18 @@
 'use strict';
 
+let Note = require('../models/note-model')
+
 class NoteList {
   constructor(){
     this.notes = [];
   }
 
-  addNote(note) {
+  createNote(text) {
+    let newNote = new Note(text)
+    this._addNote(newNote)
+  }
+  
+  _addNote(note) {
     this.notes.push(note);
   }
 }
