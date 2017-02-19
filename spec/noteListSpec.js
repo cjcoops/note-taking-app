@@ -1,9 +1,7 @@
 'use strict';
 
 describe('NoteList', function() {
-  let NoteList = require('../models/note-list-model')
   let noteList
-  let Note = require('../models/note-model')
 
   beforeEach(function() {
     noteList = new NoteList;

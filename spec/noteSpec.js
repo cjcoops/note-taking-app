@@ -1,7 +1,6 @@
 'use strict';
 
 describe('Note', function() {
-  let Note = require('../models/note-model')
   let note
 
   beforeEach(function() {

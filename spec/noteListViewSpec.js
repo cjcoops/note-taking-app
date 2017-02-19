@@ -1,7 +1,6 @@
 'use strict';
 
 describe('NoteListView', function() {
-  let NoteListView = require('../views/note-list-view');
   let noteListView,
       noteListMock,
       noteMock,
@@ -15,7 +14,7 @@ describe('NoteListView', function() {
     noteMock.getText.and.returnValue("Favourite food: pesto");
 
     noteListMock = jasmine.createSpyObj("noteList",["getNotes"])
-    
+
     noteListView = new NoteListView(noteListMock)
   })
 
