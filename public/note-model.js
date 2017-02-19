@@ -1,7 +1,7 @@
 'use strict';
 
 (function(exports) {
-  class Note {
+  class NoteModel {
     constructor(text){
       this.text = text;
     }
@@ -11,5 +11,5 @@
     }
   }
 
-  exports.Note = Note;
+  exports.NoteModel = NoteModel;
 })(this);

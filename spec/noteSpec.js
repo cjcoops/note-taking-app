@@ -4,7 +4,7 @@ describe('Note', function() {
   let note
 
   beforeEach(function() {
-    note = new Note("My favourite language is JavaScript");
+    note = new NoteModel("My favourite language is JavaScript");
   })
 
   it('stores the note content in its text property', function() {

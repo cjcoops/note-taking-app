@@ -3,13 +3,15 @@
 (function(exports){
 
   class NoteController {
-    constructor(noteListModel){
+    constructor(app, noteListModel){
       this._noteListModel = noteListModel;
-      this._app = document.getElementById("app");
+      this._noteListView = new NoteListView(this._noteListModel)
+      this._app = app;
+      this.displayList();
     }
 
-    change(){
-      this._app.innerHTML = "howdy";
+    displayList(){
+      this._app.innerHTML = this._noteListView.returnHTML();
     }
   }
 

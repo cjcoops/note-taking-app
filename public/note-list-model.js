@@ -2,13 +2,13 @@
 
 (function(exports){
 
-  class NoteList {
+  class NoteListModel {
     constructor(){
       this.notes = [];
     }
 
     createNote(text) {
-      let newNote = new Note(text)
+      let newNote = new NoteModel(text)
       this._addNote(newNote)
     }
 
@@ -21,6 +21,6 @@
     }
   }
 
-  exports.NoteList = NoteList;
+  exports.NoteListModel = NoteListModel;
 
 })(this);

@@ -4,7 +4,7 @@ describe('NoteList', function() {
   let noteList
 
   beforeEach(function() {
-    noteList = new NoteList;
+    noteList = new NoteListModel;
   })
 
   it('stores an array of note models', function() {
@@ -15,7 +15,7 @@ describe('NoteList', function() {
 
     it('creates a new note and adds to the list', function() {
       noteList.createNote("My favourite language is JavaScript");
-      expect(noteList.notes[0] instanceof Note).toBeTruthy();
+      expect(noteList.notes[0] instanceof NoteModel).toBeTruthy();
     })
   })
 
