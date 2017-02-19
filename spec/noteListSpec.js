@@ -17,6 +17,12 @@ describe('NoteList', function() {
       noteList.createNote("My favourite language is JavaScript");
       expect(noteList.notes[0] instanceof NoteModel).toBeTruthy();
     })
+
+    it("gives the first note an id of 0", function() {
+      noteList.createNote("My favourite language is JavaScript");
+      console.log(noteList.notes[0])
+      expect(noteList.notes[0].getId()).toEqual(0);
+    })
   })
 
   describe('#getNotes', function() {

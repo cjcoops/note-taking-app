@@ -2,12 +2,17 @@
 
 (function(exports) {
   class NoteModel {
-    constructor(text){
-      this.text = text;
+    constructor(text, id){
+      this._text = text;
+      this._id = id;
     }
 
     getText() {
-      return this.text;
+      return this._text;
+    }
+
+    getId() {
+      return this._id;
     }
   }
 

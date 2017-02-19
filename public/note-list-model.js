@@ -8,7 +8,7 @@
     }
 
     createNote(text) {
-      let newNote = new NoteModel(text)
+      let newNote = new NoteModel(text, 0)
       this._addNote(newNote)
     }
 
