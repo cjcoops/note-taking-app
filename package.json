@@ -13,7 +13,8 @@
     "jasmine": "^2.5.3"
   },
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "start": "node node_modules/http-server/bin/http-server"
   },
   "author": "Chris Cooper",
   "license": "ISC"

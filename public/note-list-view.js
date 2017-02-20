@@ -10,7 +10,7 @@
       let html = "<ul>";
       let notes = this._noteListModel.getNotes();
       for (var i=0; i<notes.length; i++) {
-        html += "<li><div>" + this.truncate(notes[i]) + "</div></li>";
+        html += `<li><a href='#${notes[i].getId()}'>` + this.truncate(notes[i]) + "</a></li>";
       }
       html += "</ul>";
       return html;
@@ -22,7 +22,7 @@
         return noteText.substring(0,20) + "..."
       } else {
         return noteText;
-      }  
+      }
     }
   }
 
